@@ -1,22 +1,22 @@
 import React from "react";
-import { StyleSheet, View, Text, Button } from "react-native";
+import { View, Text, Button, FlatList, TouchableOpacity } from "react-native";
+import { globalStyles } from "../styles/global";
 
-export default function ReviewDetails({navigation}) {
-    const pressHandler=()=>{
-        navigation.goBack();
-        // navigation.pop('Home');
-    }
+export default function ReviewDetails({route}) {
+    // const pressHandler=()=>{
+    //     navigation.goBack();
+    //     // navigation.pop('Home');
+    // }
+
+    
+   
+     
     return(
-        <View style={styles.container}>
-            <Text>ReviewDetails Screen</Text>
-            <Button title="Back to Home" onPress={pressHandler}/>
+        <View style={globalStyles.container}>
+            <Text style={globalStyles.titleText}>{route.params.title}</Text>
+            {/* <Button title="Back to Home" /> */}
+
+           
         </View>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        padding:24,
-        
-    }
-})
